@@ -10,6 +10,7 @@ void main(){
   Fruta fruta1 = Fruta(nome, peso, cor, sabor, diasDesdeColheita);
 
   print(fruta1.nome);
+  fruta1.estaMadura(30);
 }
 
 class Fruta {
@@ -20,4 +21,9 @@ class Fruta {
 
  //criação do construtor
   Fruta(this.nome, this.peso, this.cor, this.sabor, this.diasDesDeColheita, {this.isMadura});
+
+  estaMadura(int diasParaMadura){
+    isMadura = diasDesDeColheita >= diasParaMadura;
+    print('A sua $nome foi colhida há $diasDesDeColheita e precisa de $diasParaMadura para poder comer. Ela está madura? $isMadura');
+  }
 }
